@@ -1,0 +1,650 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Dart @ London HTML5</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Chris Buckett" />
+    <link href="impress-demo-londonajax.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link href="prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="prettify/prettify.js"></script>
+</head>
+<body class="impress-not-supported">
+<script src="jquery-1.9.1.min.js"></script>
+<div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+
+ <!-- Define auto transitions -->
+  <script>
+     $(document).ready(function() {
+      $(document).on('impress:stepenter', function(e) {
+        var currentSlide = $(e.target).attr('id');
+
+        if (currentSlide === 'step3a' || currentSlide === 'step3b' || 
+            currentSlide === 'step3c') {
+          setTimeout(api.next, 500);
+        }
+
+        if (currentSlide === 'whatisdart1') {
+          setTimeout(api.next, 1000);
+        }
+
+        if (currentSlide === 'howelse1') {
+          setTimeout(api.next, 1000);
+        }
+
+        if (currentSlide === 'howelse2') {
+          setTimeout(api.next, 1000);
+        }
+
+        if (currentSlide === 'tools1' || currentSlide == 'tools2' || currentSlide == 'tools3' ||
+          currentSlide === 'tools4' || currentSlide == 'tools5' || currentSlide == 'tools6' ||
+          currentSlide == 'tools7') {
+          setTimeout(api.next, 100);
+        }
+      });
+    });
+  </script>
+
+<div id="impress">
+  <!-- Slide 1: Welcome -->
+  <div id="start" class="step slide" data-x="-800" data-y="-800" data-rotate-x="-60">
+      <img class="left logo" src="html5london.jpeg"/>
+      <img class="right logo" src="dartbanner.jpg"/>
+      <h1>Dart @ London HTML5</h1><br/>
+      <h2>Chris Buckett</h2><br/>
+      <p class="center">May 2013</p></br>
+      <img class="left logo"  style="margin-top:-80px" src="dartinaction.png" height="200px"/>
+      <img class="right logo" src="gde.png"/>
+      
+  </div>
+
+  <!-- Slide 2: We build enterprise -->
+  <!-- I work for Entity, and we build enterprise software -->
+  <div class="step slide" data-x="-800" data-y="0" >
+      <img class="center logo" style="padding-top:30px" src="entity_logo.png"/>
+      <h3>www.entity.co.uk</h3>
+      <br /><br />
+      <br/>
+       <q class="center">We build enterprise software.</q> 
+
+      <br/>
+  </div>
+
+ 
+
+
+  <!-- Slide 3a: Multiple Teams -->
+  <!-- there are constraints when building enterprise software -->
+  <!--<div id="step3a" class="step slide border" data-x="-1000" data-y="800"> 
+    <h1>Constraints</h1>
+    <ul>
+      <li>Multiple Teams</li>
+    </ul>
+  </div>
+
+  <div id="step3b" class="step slide border" data-x="-1000" data-y="800"> 
+    <h1>Constraints</h1>
+    <ul>
+      <li>Multiple Teams</li>
+      <li>Modular Design</li>    
+    </ul>
+
+
+  </div>
+
+  <div id="step3c" class="step slide border" data-x="-1000" data-y="800"> 
+    <h1>Constraints</h1>
+    <ul>
+      <li>Multiple Teams</li>
+      <li>Modular Design</li>    
+      <li>Frameworks</li>
+    </ul>
+  </div>
+
+  <div id="step3d" class="step slide border" data-x="-1000" data-y="800"> 
+    <h1>Constraints</h1>
+    <ul>
+      <li>Multiple Teams</li>
+      <li>Modular Design</li>    
+      <li>Frameworks</li>
+      <li>Longevity</li>
+    </ul>
+  </div>-->
+
+  <!-- Slide 4: common problem: -->
+  <div class="step slide hideinactive" data-x="-800" data-y="800" data-scale="0.5">
+    <h3>They all share a common problem</h3>
+  </div>
+
+
+  <!-- Slide 5: communication: -->
+  <div class="step slide border hideinactive" data-x="-800" data-y="900" data-scale="0.5">
+     <h2 class="center">Communication!</h2>
+     <img class="center logo" src="img/can-telephones.jpg" width="800"/>
+  </div>
+  
+  <!-- slide 6: communication2 -->
+  <div class="step slide border" data-x="0" data-y="900" data-scale="0.5">
+     <h2 class="center">Communication...</h2>
+     <img class="center logo" src="img/comm_through_code.png" height="500"/>
+  </div>
+
+  <!-- Slide 6: problem solved-->
+  <div class="step slide" data-x="800" data-y="900" data-scale="1">
+      <h3>Problem Solved?</h3>
+      <q><img src="img/tick.png" style="vertical-align:middle;">Server-side</q>
+      <q><img src="img/tick.png" style="vertical-align:middle;">Thick client</q>
+      <q><span style="font-size:70px; font-weight:bold; color:black; margin-left:30px;">?</span>&nbsp;&nbsp; In the browser</q>
+  </div>
+
+  <!-- Slide 7: GWT / Java -->
+  <div class="step slide" data-x="800" data-y="2000" data-scale="1"> 
+    <h3>Java / GWT (Google Web Toolkit)</h3>
+    <br/>
+    <pre class="prettyprint lang-java" style="border:none;">
+/**
+ * @param person The person to greet
+ * @param greeting The greeting
+ * @return The personalized message
+ */
+public String greet(
+    Person person, String greeting) {
+  String result = greeting +" "+ person.name;
+  return result;
+}
+    </pre>
+  </div>
+
+  <!-- Slide 8: Closure compiler -->
+    <div class="step slide" data-x="1700" data-y="2000" data-scale="1"> 
+    <h3>JavaScript<span style="color:rgba(0,0,0,0);"> + Annotations</span></h3>
+    <pre class="prettyprint lang-js" style="border:none;">
+
+
+
+
+
+var greet = function(person, greeting) {
+
+  var result = greeting +" "+ person.name;
+  return result;
+};
+    </pre>
+  </div>
+
+  <div class="step slide hideinactive" data-x="1700" data-y="2000" data-scale="1"> 
+    <h3>JavaScript + Annotations</h3>
+    <pre class="prettyprint lang-js" style="border:none;">
+/**
+ * @param {foo.Person} person The person to greet
+ * @param {string} greeting The greeting
+ * @return {string} The personalized message
+ */
+var greet = function(person, greeting) {
+  // @type {string}
+  var result = greeting +" "+ person.name;
+  return result;
+};
+    </pre>
+  </div>
+
+
+
+  <!-- Slide 9: Meet in the middle? -->
+  <div class="step slide hideinactive" data-x="1200" data-y="1800" data-scale="2">
+    <br /><br/>
+    <h2>Is it possible to meet in the middle?</h2>
+  </div>  
+
+  <!-- Slide 10: Turn to the dart slide -->
+  <div class="step slide border" data-x="1000" data-y="3200" data-scale="1" data-rotate="-90">
+     <h2 class="center">Let's Turn to the Dart Slide</h2>
+     <img class="center logo" src="img/vaderslide.jpg" width="800"/>
+  </div>
+
+  <!-- Slide 11a: What is dart -->
+  <div id="whatisdart1" class="step slide border" data-x="2000" data-y="3200" data-scale="1" data-rotate="-90">
+     <h1 class="left">What is Dart?</h1>
+     <img class="right logo" src="dartbanner.jpg"/><br />
+  </div>
+   
+  <!-- Slide 11b What is Dart -->  
+  <div id="whatisdart2" class="step slide border hideinactive" data-x="2000" data-y="3200" data-scale="1" data-rotate="-90">
+     <h1 class="left">What is Dart?</h1>
+     <img class="right logo" src="dartbanner.jpg"/><br />
+     <img class="center logo" src="img/whatisdart1.png">
+  </div>
+
+  <!-- Slide 12: Class based -->
+  <div class="step slide border hideinactive" data-x="2060" data-y="3200" data-scale="0.7" data-rotate="-90">
+     <h1>Familiar</h1>
+     <p class="center">Unsurprising Class Based OOP</p>
+     <pre class="prettyprint lang-dart" style="border:none">
+class Person {
+  var name;
+}
+
+class Customer extends Person {
+  var accountNo;
+  var address = new Address();
+}      
+
+class Address {
+  var lines = new List(4);
+  var postcode;
+}
+     </pre>
+    </div>
+
+  <!-- Slide 14: Functional -->
+  <div class="step slide border hideinactive" data-x="2060" data-y="3200" data-scale="0.7" data-rotate="-90">
+     <h1>Functional</h1>
+     <p class="center">Functions are objects</p><br/>
+     <pre class="prettyprint lang-dart" style="border:none">
+greet(person, greeting) {
+  var result = greeting + " " + person.name;
+  return result;
+}
+
+// store greet in another variable
+var myFunc = greet;
+var me = new Person()..name="Chris";
+myFunc(me,"Hello");
+     </pre>
+  </div>
+
+<!-- Slide 13: Optionally Typed -->
+  <div class="step slide border hideinactive" data-x="2060" data-y="3200" data-scale="0.7" data-rotate="-90">
+     <h1>Optionally Typed</h1>
+     <p class="center">Communicating intent through code</p>
+     <pre class="prettyprint lang-dart" style="border:none; font-size:30px">
+class Person {
+  String name;
+}
+
+class Customer extends Person {
+  int accountNo;
+  Address address = new Address();
+}      
+
+String greet(Person person, String greeting) {
+  var result = greeting + " " + person.name;
+  return result;
+}
+     </pre>
+  </div>
+
+  <!-- Slide 15: Also Has... -->
+  <div class="step slide border hideinactive" data-x="2000" data-y="3200" data-scale="0.9" data-rotate="-90">
+     <h1 class="left">What is Dart?</h1>
+     <img class="right logo" src="dartbanner.jpg"/><br />
+     <q>Dart language also has...</q>
+     <ul >
+        <li class="smaller">Interfaces <code>class Person implements Serializable</code></li>
+        <li class="smaller">Privacy <code>String _iAmPrivate;</code></li>
+        <li class="smaller">Futures <code>doAsync().then((result) { ... } );</code></li>
+        <li class="smaller">Lexical scope (sane <code>this</code>)</li>
+        <li class="smaller">Generics <code>new Map&lt;String,Person&gt;();</code></li>
+        <li class="smaller">Concurrency <code>port.send("Hello");</code></li>
+        <li class="smaller">Reflection <code>instance.invoke('sayHello',[...]);</li>
+     </ul>
+  </div>
+
+  <!-- Slide 16: Communicating intent with code -->
+  <div class="step slide border" data-x="2800" data-y="3200" data-scale="0.8" data-rotate="-90">
+      <h1>How does this help us?</h1>
+      <p>Communicating intent through code, to tools and humans</p>
+      <br/>
+    <pre class="prettyprint lang-js" style="border:none; margin-left:-40px;">
+// javascript
+function greet(person, greeting) {
+  var result = greeting +" "+ person.name;
+  return result;
+}
+    </pre>
+&nbsp;
+    <pre class="prettyprint lang-js" style="border:none; margin-left:-40px;">
+// dart
+greet(person, greeting) {
+  var result = greeting +" "+ person.name;
+  return result;
+}
+    </pre>
+  </div>
+
+<!-- Slide 16b: Communicating intent through code -->  
+<div class="step slide border hideinactive" data-x="2800" data-y="3200" data-scale="0.8" data-rotate="-90">
+      <h1>How does this help us?</h1>
+      <p>Communicating intent through code, to humans and tools</p>
+      <br/>
+    <pre class="prettyprint lang-js" style="border:none; margin-left:-40px;">
+// javascript
+function greet(person, greeting) {
+  var result = greeting +" "+ person.name;
+  return result;
+}
+    </pre>
+
+<p>Use <strong>type annotations</strong> on the <strong>surface area</strong> of your code</p>
+    <pre class="prettyprint lang-dart" style="border:none; margin-left:-40px;">
+// dart 
+String greet(Person person, String greeting) {
+  var result = greeting +" "+ person.name;
+  return result;
+}
+    </pre>
+  </div>
+
+<!-- Slide 17: What do you get out of the box? -->
+<div id="howelse1" class="step slide border" data-x="3600" data-y="3200" data-scale="0.7" data-rotate="-90">
+  <h1>How else can Dart help us?</h1>
+  <br />
+  <!-- next slide transitions in... -->
+</div>
+
+<!-- Slide 17b -->
+<div class="step slide border hideinactive" data-x="3600" data-y="3200" data-scale="0.7" data-rotate="-90">
+  <h1>How else can Dart help us?</h1>
+  <br />
+  <img class="center logo" src="img/whatisdart2.png">
+</div>
+
+<!-- Slide 18 -->
+<div class="step slide border hideinactive" data-x="3600" data-y="3200" data-scale="0.6" data-rotate="-90">
+  <h1>Libraries and Packages</h1>
+  <br />
+  <br />
+  <pre class="prettyprint lang-dart">
+library model_objects;
+
+import 'dart:json';
+import 'package:logger/logger.dart';
+
+part 'src/customer.dart';
+part 'src/order.dart';
+
+//... other code ...
+  </pre>
+</div>
+
+<!-- Slide 19 -->
+<div class="step slide border hideinactive" data-x="4400" data-y="3400" data-scale="0.5" data-rotate="-90">
+  <h1>Built-in libraries</h1><br/>
+  <h3>dart:html</h3>
+  <pre class="prettyprint lang-dart" style="border:none; margin-left:-40px;">
+import 'dart:html';
+
+main() {
+  var msg = query('#msg');
+  var btn = new ButtonElement();
+  btn.text = 'Click me!';
+  btn.onClick.listen((e) => msg.text = 'Dart!');
+  document.body.children.add(btn);
+}
+  </pre>
+
+</div>
+
+<!-- Slide 20 -->
+<div class="step slide border hideinactive" data-x="4400" data-y="3400" data-scale="0.5" data-rotate="-90">
+  <h1>Built-in libraries</h1><br/>
+  <h3>dart:io</h3>
+  <pre class="prettyprint lang-dart" style="font-size:30px; border:none; margin-left:-40px;">
+import 'dart:io';
+
+main() {
+  HttpServer.bind("127.0.0.1", 8888).then((svr) {
+    svr.listen((req) {
+      req.response.write("Hello World\n");
+      req.response.close();
+    });
+
+    print("Listening at http://127.0.0.1:8888/");
+  });
+}
+  </pre>
+</div>
+
+
+<!-- Slide 21 -->
+<div class="step slide border hideinactive" data-x="4500" data-y="3200" data-scale="1" data-rotate="-90">
+  <h1>Built-in Libraries</h1>
+  <img style="float:right; padding-top: 40px; padding-right:30px;" src="img/sdk.png">
+
+  <br />
+  <ul style="float:left">
+    <li><strong>dart:html</strong></li>
+    <li><strong>dart:io</strong></li>
+    <li>dart:unittest</li>
+    <li>dart:indexed_db</li>
+    <li>dart:web_gl</li>
+    <li>dart:web_audio</li>
+    <li>lots more ...</li>
+  </ul>
+  
+</div>
+
+<!-- Slide 22 -->
+<div class="step slide border" data-x="5400" data-y="3200" data-scale="1" data-rotate="-90">
+  <h1>Pub: Package Manager</h1>
+  <br/>
+  <pre style="prettyprint">
+name: my_service
+description: My App Service
+version: 
+dependencies:
+  model_objects:
+    hosted:
+      url: http://my-package-server.com
+  config:
+    git: git://github.com/chrisbu/config.git
+    version: 1.2
+dev_dependencies:
+  unittest: any
+  </pre>  
+</div>
+
+<!-- Slide 23: -->
+<div class="step slide" data-x="6300" data-y="3200" data-scale="1" data-rotate="0">
+  <q>Built-in libraries help <strong>reduce fragmentation</strong>.</q>
+  <q>Teams can <strong>work together</strong>, sharing <strong>versioned packages</strong>.<q>
+  <!-- next slide transitions in... -->
+</div>
+
+<!-- Slide 24a: What do you get out of the box? -->
+<div id="howelse2" class="step slide border" data-x="5400" data-y="4300" data-scale="1" data-rotate="90">
+  <h1>What else is in the box?</h1>
+  <br />
+  <!-- next slide transitions in... -->
+</div>
+
+<!-- Slide 24b: In the box: Tools -->
+<div class="step slide border hideinactive" data-x="5400" data-y="4300" data-scale="1" data-rotate="90">
+  <h1>What else is in the box?</h1>
+  <br />
+  <img class="center logo" src="img/whatisdart3.png">
+</div>
+
+
+<!-- Slide 24b -->
+<div id="tools1" class="step slide border" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools2" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>Dart Editor</h2>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools3" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>Dartium</h2>
+</div>
+
+
+<!-- Slide 24b -->
+<div id="tools4" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>dart2js</h2>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools5" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>Dart Debugger</h2>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools6" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>Dart Analyzer</h2>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools7" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <br />
+  <h2>DartDoc</h2>
+</div>
+
+<!-- Slide 24b -->
+<div id="tools8" class="step slide border hideinactive" data-x="4600" data-y="4300" data-scale="1" data-rotate="90">
+  <q>Communicating intent through code, to humans <strong>and tools</strong>.</q>
+  <br />
+  <ul style="float:left">
+    <li>Dart Editor</li>
+    <li>Dartium</li>
+    <li>dart2js</li>
+  </ul>
+  <ul style="float:right; padding-right:100px;">
+    <li>Dart Debugger</li>
+    <li>Dart Analyzer</li>
+    <li>DartDoc</li>
+  </ul>
+</div>
+
+<!-- Slide 25: Web UI -->
+<div class="step slide border" data-x="3800" data-y="4300" data-scale="1" data-rotate="90">
+  <h1>Web UI Framework</h1>
+  <q style="margin-top:30px;">Teams can <strong>work together</strong>, sharing <strong>versioned packages</strong>.<q>
+    <h2 style="margin-top:-50px;">Web Components</h2>
+    <h2>Model Driven Views</h2>
+    <h2>Shadow DOM</h2>
+    <br/><br/>
+  <i class="right">In all modern browsers</i><br/><br />
+</div>
+
+
+<div class="step slide border" data-x="3000" data-y="4300" data-scale="1" data-rotate="90">
+  <h2>Model Driven Views</h2>
+  <pre class="prettyprint lang-html" style="border:none">
+    &lt;span&gt;{{ message }}&lt;/span&gt;
+    &lt;input bind-value='message'&gt;
+    &lt;script type='application/dart'&gt;
+      import 'package:web_ui/web_ui.dart';
+
+      var message = 'Hello' + ' ' + 'Dart';
+
+      main() {}
+    &lt;/script&gt;
+  </pre>
+  <iframe class="center" src="demos/web_ui_basic/out/webui.html" width="600" height="150" frameborder="0"></iframe>
+</div>
+
+<div class="step slide border" data-x="2200" data-y="4300" data-scale="1" data-rotate="90">
+  <h2>Web Components</h2>
+  <pre class="prettyprint lang-html" style="border:none; margin-left:-100px;">
+      &lt;link rel="components" href="mdv_demo.html"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;x-mdv-component&gt;&lt;/x-mdv-component&gt;
+
+      &lt;script type='application/dart'&gt;
+        import 'package:web_ui/web_ui.dart';
+        main() {}
+      &lt;/script&gt;
+  </pre>
+  <iframe class="center" src="demos/web_ui_component/out/webui.html" width="700" height="220" frameborder="0"></iframe>
+</div>
+
+<div class="step slide border" data-x="1400" data-y="4300" data-scale="1" data-rotate="90">
+  Why Dart appeals to me...
+  <img class="right logo" src="dartbanner.jpg"/>
+  <h3 style="padding-top:50px;"><strong>Familiar</strong> to developers</h3><br/>
+  <h3><strong>Communicating intent</strong> through code, to <strong>humans</strong> and <strong> tools</strong>.</h3><br />
+  <h3>Allowing <strong>modular</strong> working with <strong>teams</strong>.</h3><br /><br/>
+  <span class="right">Could it be another tool in your toolbox...?</span>
+</div>
+
+<div class="step slide border" data-x="600" data-y="4300" data-scale="1" data-rotate="90">
+  <h2>Find out more...</h2>
+  <img class="right logo" src="dartbanner.jpg"/>
+  <ul>
+    <li>www.dartlang.org</li>
+    <li><strong>#dartlang</strong> on G+ or Twitter</li>
+    <li>+Chris Buckett</li>
+    <li>@ChrisDoesDev</li>
+    <li>Slides: github/<strong>chrisbu</strong></li>
+  </ul>
+  <img class="right logo"  style="margin-top:-210px" src="dartinaction.png" height="300px"/>
+  Thankyou!
+</div>
+
+<div class="step slide border" data-x="600" data-y="4300" data-scale="1" data-rotate="90">
+  <h2>Find out more...</h2>
+  <img class="right logo" src="dartbanner.jpg"/>
+  <ul>
+    <li>www.dartlang.org</li>
+    <li><strong>#dartlang</strong> on G+ or Twitter</li>
+    <li>+Chris Buckett</li>
+    <li>@ChrisDoesDev</li>
+    <li>Slides: github/<strong>chrisbu</strong></li>
+  </ul>
+  <img class="right logo"  style="margin-top:-210px" src="dartinaction.png" height="300px"/>
+  Thankyou!
+</div>
+
+<!-- Slide: Overview -->
+<!--<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+</div>-->
+
+</div><!-- end impress -->
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="impress.js"></script>
+<script>
+  var api = impress();
+  api.init();
+</script>
+<script>prettyPrint();</script>
+</body>
+</html>
